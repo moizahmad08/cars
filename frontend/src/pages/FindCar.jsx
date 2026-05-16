@@ -52,7 +52,8 @@ export default function FindCar() {
   const handleSubmit = async () => {
     setIsSubmitting(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/cars/recommend', formData);
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await axios.post(`${apiUrl}/api/cars/recommend`, formData);
       setIsSubmitting(false);
       navigate('/results', { state: { recommendations: response.data.recommendations } });
     } catch (err) {
