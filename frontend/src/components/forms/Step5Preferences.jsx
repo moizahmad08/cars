@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, XCircle, Palette, Accessibility, History, UserPlus } from 'lucide-react';
+import { Heart, XCircle, Palette, Accessibility, History, UserPlus, Check } from 'lucide-react';
 
 export default function Step5Preferences({ data, updateData }) {
   const handleChange = (e) => {
