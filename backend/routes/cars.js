@@ -16,7 +16,7 @@ router.get('/health', (req, res) => {
     status: 'ok',
     apiKeyConfigured: hasKey,
     apiKeyPreview: hasKey ? process.env.XAI_API_KEY.substring(0, 10) + '...' : 'MISSING',
-    model: 'grok-4.20-0309-reasoning',
+    model: 'grok-4.20-0309-non-reasoning',
     timestamp: new Date().toISOString()
   });
 });
@@ -122,7 +122,7 @@ Do NOT include any markdown formatting, code fences, or any text before or after
 `;
 
     const completion = await openai.chat.completions.create({
-      model: "grok-4.20-0309-reasoning",
+      model: "grok-4.20-0309-non-reasoning",
       messages: [
         { role: "system", content: "You are a helpful AI assistant. You ONLY output valid JSON. Never output any text, markdown, or explanations outside the JSON object." },
         { role: "user", content: prompt }
