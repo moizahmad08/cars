@@ -21,7 +21,7 @@ export default function Results() {
               <ChevronLeft size={18} className="mr-1" /> Back to Questionnaire
             </Link>
             <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">AI Matches</h1>
-            <p className="text-slate-500 mt-2 text-lg">Here are your top 3 perfect matches, ranked by Grok AI.</p>
+            <p className="text-slate-500 mt-2 text-lg">Here are your top 3 perfect matches, specifically tailored to your preferences.</p>
           </div>
         </div>
 

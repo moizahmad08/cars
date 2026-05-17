@@ -85,8 +85,8 @@ export default function FindCar() {
         >
           <Search size={40} className="text-white" />
         </motion.div>
-        <h2 className="text-3xl font-bold text-slate-900 mb-4">Grok AI is analyzing your profile...</h2>
-        <p className="text-slate-500 text-lg">Scanning 10,000+ vehicles to find your perfect match.</p>
+        <h2 className="text-3xl font-bold text-slate-900 mb-4">We are finding the best match for you...</h2>
+        <p className="text-slate-500 text-lg">Scanning 10,000+ vehicles to find your perfect car.</p>
       </div>
     );
   }
