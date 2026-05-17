@@ -4,19 +4,18 @@ const Car = require('../models/Car');
 const { OpenAI } = require('openai');
 
 const openai = new OpenAI({
-  apiKey: process.env.XAI_API_KEY,
-  baseURL: "https://api.x.ai/v1",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 // @route   GET /api/cars/health
 // @desc    Health check - verify API key and connectivity
 router.get('/health', (req, res) => {
-  const hasKey = !!process.env.XAI_API_KEY && process.env.XAI_API_KEY.length > 10;
+  const hasKey = !!process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY.length > 10;
   res.json({
     status: 'ok',
     apiKeyConfigured: hasKey,
-    apiKeyPreview: hasKey ? process.env.XAI_API_KEY.substring(0, 10) + '...' : 'MISSING',
-    model: 'grok-4.20-0309-non-reasoning',
+    apiKeyPreview: hasKey ? process.env.OPENAI_API_KEY.substring(0, 10) + '...' : 'MISSING',
+    model: 'gpt-4o-mini',
     timestamp: new Date().toISOString()
   });
 });
@@ -122,7 +121,8 @@ Do NOT include any markdown formatting, code fences, or any text before or after
 `;
 
     const completion = await openai.chat.completions.create({
-      model: "grok-4.20-0309-non-reasoning",
+      model: "gpt-4o-mini",
+      response_format: { type: "json_object" },
       messages: [
         { role: "system", content: "You are a helpful AI assistant. You ONLY output valid JSON. Never output any text, markdown, or explanations outside the JSON object." },
         { role: "user", content: prompt }
