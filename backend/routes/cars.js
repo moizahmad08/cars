@@ -33,16 +33,16 @@ router.get('/', async (req, res) => {
 });
 
 const mockCarsFallback = [
-  { make: 'Honda', model: 'Civic', year: 2023, variant: 'Oriel 1.5 CVT', engineSpecs: { capacityCc: 1500, horsepower: 170 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 400, safetyRatings: 4, features: ['ABS', 'Airbags', 'Sunroof', 'Push Start'], reliabilityScore: 8, maintenanceCost: 'Medium', fuelEconomy: 13, resaleValue: 9, knownIssues: ['Low ground clearance'] },
-  { make: 'Toyota', model: 'Corolla', year: 2023, variant: 'Grande 1.8 CVT', engineSpecs: { capacityCc: 1800, horsepower: 138 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 470, safetyRatings: 4, features: ['ABS', 'Airbags', 'Sunroof'], reliabilityScore: 9, maintenanceCost: 'Low', fuelEconomy: 12, resaleValue: 10, knownIssues: ['Dated interior'] },
-  { make: 'Kia', model: 'Sportage', year: 2023, variant: 'AWD', engineSpecs: { capacityCc: 2000, horsepower: 155 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 800, safetyRatings: 5, features: ['ABS', 'Airbags', 'Sunroof', 'AWD'], reliabilityScore: 8, maintenanceCost: 'Medium', fuelEconomy: 10, resaleValue: 8, knownIssues: ['Fuel knocking'] },
-  { make: 'Suzuki', model: 'Alto', year: 2023, variant: 'VXL AGS', engineSpecs: { capacityCc: 660, horsepower: 39 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 4, bootSpace: 150, safetyRatings: 2, features: ['ABS', 'Airbags'], reliabilityScore: 7, maintenanceCost: 'Low', fuelEconomy: 18, resaleValue: 9, knownIssues: ['Build quality'] },
-  { make: 'Toyota', model: 'Yaris', year: 2023, variant: 'ATIV CVT', engineSpecs: { capacityCc: 1300, horsepower: 97 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 330, safetyRatings: 3, features: ['ABS', 'Airbags', 'Push Start'], reliabilityScore: 8, maintenanceCost: 'Low', fuelEconomy: 14, resaleValue: 8, knownIssues: ['Underpowered on highways'] },
-  { make: 'Suzuki', model: 'Swift', year: 2023, variant: 'GL CVT', engineSpecs: { capacityCc: 1200, horsepower: 82 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 210, safetyRatings: 3, features: ['ABS', 'Airbags', 'Push Start'], reliabilityScore: 7, maintenanceCost: 'Low', fuelEconomy: 15, resaleValue: 7, knownIssues: ['Small boot space'] },
-  { make: 'Hyundai', model: 'Tucson', year: 2023, variant: 'GLS Sport 2.0 FWD AT', engineSpecs: { capacityCc: 2000, horsepower: 156 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 620, safetyRatings: 5, features: ['ABS', 'Airbags', 'Sunroof', 'Ventilated Seats'], reliabilityScore: 8, maintenanceCost: 'Medium', fuelEconomy: 10, resaleValue: 7, knownIssues: ['Parts availability'] },
-  { make: 'Changan', model: 'Alsvin', year: 2023, variant: 'DCT Lumiere', engineSpecs: { capacityCc: 1500, horsepower: 116 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 440, safetyRatings: 3, features: ['ABS', 'Airbags', 'Sunroof', 'Leather Seats'], reliabilityScore: 6, maintenanceCost: 'Medium', fuelEconomy: 12, resaleValue: 6, knownIssues: ['Lower resale value', 'DCT issues at low speed'] },
-  { make: 'MG', model: 'HS', year: 2023, variant: '1.5T Luxury', engineSpecs: { capacityCc: 1500, horsepower: 162 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 1100, safetyRatings: 5, features: ['ABS', 'Airbags', 'Sunroof', 'ADAS'], reliabilityScore: 7, maintenanceCost: 'Medium', fuelEconomy: 11, resaleValue: 7, knownIssues: ['Long wait times for service'] },
-  { make: 'Haval', model: 'H6', year: 2023, variant: 'HEV', engineSpecs: { capacityCc: 1500, horsepower: 243 }, fuelType: 'Hybrid', transmission: 'Automatic', seating: 5, bootSpace: 620, safetyRatings: 5, features: ['ABS', 'Airbags', 'Sunroof', 'Wireless Charging'], reliabilityScore: 8, maintenanceCost: 'Medium', fuelEconomy: 16, resaleValue: 8, knownIssues: ['Higher initial cost'] },
+  { make: 'Honda', model: 'Civic', year: 2023, variant: 'Oriel 1.5 CVT', price: '65-75 Lacs', engineSpecs: { capacityCc: 1500, horsepower: 170 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 400, safetyRatings: 4, features: ['ABS', 'Airbags', 'Sunroof', 'Push Start'], reliabilityScore: 8, maintenanceCost: 'Medium', fuelEconomy: 13, resaleValue: 9, knownIssues: ['Low ground clearance'] },
+  { make: 'Toyota', model: 'Corolla', year: 2023, variant: 'Grande 1.8 CVT', price: '55-65 Lacs', engineSpecs: { capacityCc: 1800, horsepower: 138 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 470, safetyRatings: 4, features: ['ABS', 'Airbags', 'Sunroof'], reliabilityScore: 9, maintenanceCost: 'Low', fuelEconomy: 12, resaleValue: 10, knownIssues: ['Dated interior'] },
+  { make: 'Kia', model: 'Sportage', year: 2023, variant: 'AWD', price: '70-80 Lacs', engineSpecs: { capacityCc: 2000, horsepower: 155 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 800, safetyRatings: 5, features: ['ABS', 'Airbags', 'Sunroof', 'AWD'], reliabilityScore: 8, maintenanceCost: 'Medium', fuelEconomy: 10, resaleValue: 8, knownIssues: ['Fuel knocking'] },
+  { make: 'Suzuki', model: 'Alto', year: 2023, variant: 'VXL AGS', price: '25-29 Lacs', engineSpecs: { capacityCc: 660, horsepower: 39 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 4, bootSpace: 150, safetyRatings: 2, features: ['ABS', 'Airbags'], reliabilityScore: 7, maintenanceCost: 'Low', fuelEconomy: 18, resaleValue: 9, knownIssues: ['Build quality'] },
+  { make: 'Toyota', model: 'Yaris', year: 2023, variant: 'ATIV CVT', price: '45-52 Lacs', engineSpecs: { capacityCc: 1300, horsepower: 97 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 330, safetyRatings: 3, features: ['ABS', 'Airbags', 'Push Start'], reliabilityScore: 8, maintenanceCost: 'Low', fuelEconomy: 14, resaleValue: 8, knownIssues: ['Underpowered on highways'] },
+  { make: 'Suzuki', model: 'Swift', year: 2023, variant: 'GL CVT', price: '38-44 Lacs', engineSpecs: { capacityCc: 1200, horsepower: 82 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 210, safetyRatings: 3, features: ['ABS', 'Airbags', 'Push Start'], reliabilityScore: 7, maintenanceCost: 'Low', fuelEconomy: 15, resaleValue: 7, knownIssues: ['Small boot space'] },
+  { make: 'Hyundai', model: 'Tucson', year: 2023, variant: 'GLS Sport 2.0 FWD AT', price: '75-82 Lacs', engineSpecs: { capacityCc: 2000, horsepower: 156 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 620, safetyRatings: 5, features: ['ABS', 'Airbags', 'Sunroof', 'Ventilated Seats'], reliabilityScore: 8, maintenanceCost: 'Medium', fuelEconomy: 10, resaleValue: 7, knownIssues: ['Parts availability'] },
+  { make: 'Changan', model: 'Alsvin', year: 2023, variant: 'DCT Lumiere', price: '40-46 Lacs', engineSpecs: { capacityCc: 1500, horsepower: 116 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 440, safetyRatings: 3, features: ['ABS', 'Airbags', 'Sunroof', 'Leather Seats'], reliabilityScore: 6, maintenanceCost: 'Medium', fuelEconomy: 12, resaleValue: 6, knownIssues: ['Lower resale value', 'DCT issues at low speed'] },
+  { make: 'MG', model: 'HS', year: 2023, variant: '1.5T Luxury', price: '80-89 Lacs', engineSpecs: { capacityCc: 1500, horsepower: 162 }, fuelType: 'Petrol', transmission: 'Automatic', seating: 5, bootSpace: 1100, safetyRatings: 5, features: ['ABS', 'Airbags', 'Sunroof', 'ADAS'], reliabilityScore: 7, maintenanceCost: 'Medium', fuelEconomy: 11, resaleValue: 7, knownIssues: ['Long wait times for service'] },
+  { make: 'Haval', model: 'H6', year: 2023, variant: 'HEV', price: '95-110 Lacs', engineSpecs: { capacityCc: 1500, horsepower: 243 }, fuelType: 'Hybrid', transmission: 'Automatic', seating: 5, bootSpace: 620, safetyRatings: 5, features: ['ABS', 'Airbags', 'Sunroof', 'Wireless Charging'], reliabilityScore: 8, maintenanceCost: 'Medium', fuelEconomy: 16, resaleValue: 8, knownIssues: ['Higher initial cost'] },
 ];
 
 // Helper to ensure a value is an array
@@ -97,10 +97,11 @@ Here is the database of available cars:
 ${JSON.stringify(cars, null, 2)}
 
 Task:
-Analyze the user's preferences against the available cars.
-Return exactly the TOP 3 recommended cars from the database that best match the user's criteria.
-You MUST format your response as a valid JSON object matching the exact structure below.
-Do NOT include any markdown formatting, code fences, or any text before or after the JSON.
+1. STRICTLY analyze the user's preferences against ONLY the available cars in the database provided above.
+2. DO NOT hallucinate, guess, or invent prices, specs, or models that are not in the database. Use ONLY the data provided.
+3. If a user sets a strict filter (e.g., Budget, Fuel Type, Body Type), you MUST penalize or discard cars that do not fit.
+4. Return exactly the TOP 3 recommended cars from the database that best match the criteria.
+5. Format your response as a valid JSON object matching the exact structure below.
 
 {
   "recommendations": [
@@ -121,7 +122,7 @@ Do NOT include any markdown formatting, code fences, or any text before or after
 `;
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: "gpt-4o",
       response_format: { type: "json_object" },
       messages: [
         { role: "system", content: "You are a helpful AI assistant. You ONLY output valid JSON. Never output any text, markdown, or explanations outside the JSON object." },
