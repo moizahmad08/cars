@@ -97,11 +97,12 @@ Here is the database of available cars:
 ${JSON.stringify(cars, null, 2)}
 
 Task:
-1. STRICTLY analyze the user's preferences against ONLY the available cars in the database provided above.
-2. DO NOT hallucinate, guess, or invent prices, specs, or models that are not in the database. Use ONLY the data provided.
-3. If a user sets a strict filter (e.g., Budget, Fuel Type, Body Type), you MUST penalize or discard cars that do not fit.
-4. Return exactly the TOP 3 recommended cars from the database that best match the criteria.
-5. Format your response as a valid JSON object matching the exact structure below.
+1. Analyze the user's preferences against the available cars in the database provided above.
+2. If the database contains strong matches, prioritize recommending those.
+3. IF the database lacks suitable matches for the user's specific filters (e.g., budget, body type), you ARE ALLOWED to recommend real cars available in the Pakistani market based on your own extensive knowledge.
+4. When relying on your own knowledge, ensure the prices, specs, and variants are highly accurate for the Pakistani market.
+5. Return exactly the TOP 3 recommended cars that best match the criteria.
+6. Format your response as a valid JSON object matching the exact structure below.
 
 {
   "recommendations": [
