@@ -59,7 +59,8 @@ export default function FindCar() {
     } catch (err) {
       console.error('Error fetching recommendations:', err);
       setIsSubmitting(false);
-      alert('Failed to get recommendations. Ensure the backend server is running and the Grok API Key is valid.');
+      const msg = err?.response?.data?.details || 'Our AI engine is temporarily unavailable. Please try again in a moment.';
+      alert(`Could not get recommendations: ${msg}`);
     }
   };
 
@@ -84,7 +85,7 @@ export default function FindCar() {
         >
           <Search size={40} className="text-white" />
         </motion.div>
-        <h2 className="text-3xl font-bold text-slate-900 mb-4">Claude is analyzing your profile...</h2>
+        <h2 className="text-3xl font-bold text-slate-900 mb-4">Grok AI is analyzing your profile...</h2>
         <p className="text-slate-500 text-lg">Scanning 10,000+ vehicles to find your perfect match.</p>
       </div>
     );

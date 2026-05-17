@@ -77,7 +77,7 @@ export default function Results() {
                       <CheckCircle2 className="text-green-500 mr-2" size={18} /> Pros
                     </h4>
                     <ul className="space-y-3">
-                      {car.pros.map((pro, i) => (
+                      {(Array.isArray(car.pros) ? car.pros : [car.pros]).filter(Boolean).map((pro, i) => (
                         <li key={i} className="flex items-start text-slate-600 bg-green-50/50 p-3 rounded-xl">
                           <CheckCircle2 size={16} className="text-green-500 mr-3 shrink-0 mt-0.5" />
                           <span>{pro}</span>
@@ -90,7 +90,7 @@ export default function Results() {
                       <XCircle className="text-red-500 mr-2" size={18} /> Cons
                     </h4>
                     <ul className="space-y-3">
-                      {car.cons.map((con, i) => (
+                      {(Array.isArray(car.cons) ? car.cons : [car.cons]).filter(Boolean).map((con, i) => (
                         <li key={i} className="flex items-start text-slate-600 bg-red-50/50 p-3 rounded-xl">
                           <XCircle size={16} className="text-red-500 mr-3 shrink-0 mt-0.5" />
                           <span>{con}</span>
@@ -120,9 +120,14 @@ export default function Results() {
                     </div>
                   </div>
                   <div className="col-span-2 sm:col-span-1 flex items-center justify-center">
-                    <button className="w-full h-full bg-slate-900 hover:bg-slate-800 text-white rounded-2xl font-bold transition-all shadow-lg flex items-center justify-center py-4 sm:py-0">
+                    <a 
+                      href={`https://www.pakwheels.com/used-cars/search/-/mk_${car.make.toLowerCase()}/md_${car.model.toLowerCase().replace(/ /g, '-')}/`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full h-full bg-slate-900 hover:bg-slate-800 text-white rounded-2xl font-bold transition-all shadow-lg flex items-center justify-center py-4 sm:py-0"
+                    >
                       Search Listings <ExternalLink size={18} className="ml-2 text-slate-400" />
-                    </button>
+                    </a>
                   </div>
                 </div>
                 
