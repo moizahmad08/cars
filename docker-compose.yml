@@ -16,6 +16,8 @@ services:
       - PORT=5000
       - MONGO_URI=mongodb://mongodb:27017/pakauto
       - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - ./scraper/output:/scraper/output
     depends_on:
       - mongodb
 
